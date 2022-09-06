@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { Message } from './message';
+import { Message } from './Message';
 
 @Injectable()
 export class MessagesService {
-  private messages = [
+  private messages: Message[] = [
     {
       id: 1,
       text: 'Lorem ipsum dolor sit amet, consectetur adipis',
