@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Message } from './Message';
+import { MessageDto } from './MessageDto';
 
 @Injectable()
 export class MessagesService {
@@ -28,7 +29,9 @@ export class MessagesService {
     return message;
   }
 
-  create(message: Message) {
+  create(messageDto: MessageDto) {
+    const id = this.messages.length + 1;
+    const message: Message = { id, ...messageDto };
     return this.messages.push(message);
   }
 
